@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Kiki</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: grey;
+            color: #333;
+            line-height: 1.6;
+        }
+		
+		#click-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: blue; /* Green background */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+            50% { transform: translateY(0); }
+            70% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+			animation: bounce 1.5s ease infinite;
+            color: yellow;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0.5rem 2rem;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: darkgreen;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 2rem;
+            background-color: white;
+            margin: 1rem auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .portfolio h2 {
+            color: #003366;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: #f0fff0;
+            border: 1px solid lightgreen;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: calc(33.33% - 1.5rem);
+            text-align: center;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            background: lightgreen;
+            color: #333;
+            padding: 1rem;
+        }
+
+        .project-card p {
+            padding: 1rem;
+            color: #666;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+	<a href="video.html" id="click-box">
+        Click for pictures and videos
+    </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">My Biodata</a></li>
+            <li><a href="portfolio.html">My Portfolio</a></li>
+            <li><a href="video.html">My Video</a></li>
+            <li><a href="comments.html">Your Comments</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Showcasing my work, creativity, and skills</p>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h2>My Achievements</h2>
+        <div class="projects">
+            <!-- Project 1 -->
+            <div class="project-card">
+              
+                <h3>Project 1:Created AR Projects & Animation Videos </h3>
+                <p>A magical AR-based children’s storybook featuring interactive adventures, including animations.</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                
+                <h3>Project 2: Created a Tourism App</h3>
+                <p>A mobile app showcasing games, destinations, and fun activities for travelers.</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+              
+                <h3>Project 3: Diploma IT Software Graduate</h3>
+                <p>For my FYP,I did a Information System where students or staffs can access and get update regarding the latest program or events happening. It was very helpful for students to get up to date during covid time.</p>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card">
+               
+                <h3>Project 4:Own Pani Poori Business</h3>
+                <p>A branding solution for a small pani poori business with unique identity designs.</p>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-card">
+              
+                <h3>Project 5:Open Gl Graphics </h3>
+                <p> Created few glut projects in codeblocks. It was a great experince playing with the code. To create a house, human and things using the shapes mainly</p>
+            </div>
+			
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kiki's Portfolio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiki's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: black ;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 50%, 100% {
+                transform: translateY(0);
+            }
+            30%, 70% {
+                transform: translateY(-10px);
+            }
+        }
+
+        header h1 {
+            animation: bounce 1.5s ease infinite;
+            margin-bottom: 0.5rem;
+            color: yellow;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0.5rem 2rem;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: darkgreen;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('welcome.jpg.jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+			color: grey;
+            margin-top: 300px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #fff;
+            background: #007BFF;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: #0056b3;
+        }
+
+        /* About Me Section */
+        #about {
+            background: url('about-bg.jpg') no-repeat center center/cover;
+            color: yellow;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+			color: yellow;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+		
+		.image-row {
+         display: flex;
+         justify-content: center;
+         gap: 15px; /* Space between images */
+         margin-top: 1.5rem;
+    }
+
+      .image-row img {
+       width: 100%;           /* Make images responsive */
+       max-width: 300px;      /* Set a maximum width for each image */
+       height: auto;          /* Maintain aspect ratio */
+       border-radius: 10px;   /* Optional: Rounded corners */
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for depth */
+       transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+      .image-row img:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+}
+
+        /* Popup Box */
+        #intro-box {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 20%;
+            background-color: lightgreen;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn-custom {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">My Biodata</a></li>
+            <li><a href="portfolio.html">My Portfolio</a></li>
+            <li><a href="video.html">My Video</a></li>
+            <li><a href="comments.html">Your Comments</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Kiki's Portfolio</h1>
+        <p>Welcome to my portfolio website</p>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Welcome to My World</h1>
+            <button onclick="showInfo()" class="btn-custom">Click Me</button>
+            <div id="intro-box">
+                <h2>About Me</h2>
+                <p>Hi, I'm Kiki! I'm a 23-year-old degree student studying Technology Multimedia at UMSKAL, Labuan. Originally from Penang, I have a deep passion for technology, creativity, and design. Outside of academics, I enjoy spending time with my dogs, reading books, and exploring new interests that fuel my curiosity and growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm Kiki, a passionate developer and creative thinker. Explore my portfolio and discover my work!</p>
+			<div class="image-row">
+            <img src="image1.jpg.jpeg" alt="Image 1">
+            <img src="image2.jpg.jpeg" alt="Image 2">
+            <img src="image3.jpg.jpeg" alt="Image 3">
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kiki's Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showInfo() {
+            var box = document.getElementById('intro-box');
+            if (box.style.display === "none" || box.style.display === "") {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

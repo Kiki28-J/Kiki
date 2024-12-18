@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Biodata - Kiki</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: grey;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            color: yellow;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0.5rem 2rem;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: darkgreen;
+        }
+
+        /* Section Layout */
+        section {
+            padding: 4rem 2rem;
+            background-color: white;
+            margin: 1rem auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        h2 {
+            color: #003366;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Timetable */
+        .timetable {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timetable div {
+            background: #ddd;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            width: 80%;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .timetable div:hover {
+            background: #90ee90;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        /* Image Display */
+        .image-container {
+            display: none;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+		
+		/* Skills and Interests */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .skills div {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background 0.3s;
+        }
+
+        .skills div:hover {
+            background: yellow;
+            color: black;
+            transform: scale(1.1);
+        }
+		
+		  /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">My Biodata</a></li>
+            <li><a href="portfolio.html">My Portfolio</a></li>
+            <li><a href="video.html">My Video</a></li>
+            <li><a href="comments.html">Your Comments</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>My Biodata</h1>
+        <p>Discover my daily routine, skills, and interests!</p>
+    </header>
+
+    <!-- Timetable Section -->
+    <section>
+        <h2>My Daily Timetable</h2>
+        <div class="timetable">
+            <div onclick="showImage('morning.jpg.jpeg', 'Morning Class')">🌅 Morning Class: 8:00 AM - 12:00 PM</div>
+            <div onclick="showImage('sleep.jpg.jpeg', 'Sleep Time')">💤 Sleep/Rest: 12:30 PM - 1:30 PM</div>
+            <div onclick="showImage('lunch.jpg.jpeg', 'Lunch Time')">🍽️ Lunch: 1:30 PM - 2:00 PM</div>
+            <div onclick="showImage('sunset.jpg.jpeg', 'Sunset with Friends')">🌇 Sunset with Friends: 6:00 PM - 7:00 PM</div>
+            <div onclick="showImage('dinner.jpg.jpeg', 'Dinner Time')">🍲 Dinner: 7:30 PM - 8:00 PM</div>
+			<div onclick="showImage('playtime.jpg.jpeg', 'Dog Time')">🐕‍ Playtime: 8:30 PM - 8:30 PM</div>
+            <div onclick="showImage('revision.jpg.jpeg', 'Revision Time')">📚 Revision: 8:30 PM - 10:30 PM</div>
+        </div>
+
+        <!-- Image Display Section -->
+        <div class="image-container" id="imageContainer">
+            <h3 id="imageTitle"></h3>
+            <img src="" alt="Timetable Image" id="timetableImage">
+        </div>
+    </section>
+	
+	 <section>
+        <div class="container">
+            <h2>Skills and Interests</h2>
+            <div class="skills">
+                <div>💻 Web Development</div>
+                <div>🎨 Graphic Design</div>
+                <div>🖥️ Multimedia Technology</div>
+                <div>📷 Photography</div>
+                <div>🐶 Dog Lover</div>
+                <div>📚 Book Enthusiast</div>
+                <div>🎮 Gaming</div>
+                <div>🏞️ Exploring Nature</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kiki's Biodata Page. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showImage(imageSrc, title) {
+            // Get the image container elements
+            const container = document.getElementById('imageContainer');
+            const image = document.getElementById('timetableImage');
+            const imageTitle = document.getElementById('imageTitle');
+
+            // Set the image source and title
+            image.src = imageSrc;
+            imageTitle.textContent = title;
+
+            // Display the container
+            container.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
